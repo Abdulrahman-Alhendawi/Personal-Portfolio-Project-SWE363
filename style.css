@@ -1,0 +1,101 @@
+@font-face{
+  font-family: "MyFont";
+  src: url("fonts/SUSEMono-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 800;   /* variable weight range */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "MyFont";
+  src: url("fonts/SUSEMono-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  background-color: #44444E;
+  font-family: 'MyFont', Helvetica, sans-serif;
+  font-weight: bold;
+  overflow-x: hidden;
+}
+
+#header {
+  display: flex;
+  background-color: #37353E;
+  border-radius: 0px 0px 10px 10px;
+  position: fixed;
+  top: 0;                         
+  left: 0;
+  right: 0;
+  padding: 15px 30px;
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 5%;
+  z-index: 2;
+}
+#headerElements {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+}
+#headerLogos {
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  width: 20%;
+  margin: 0 5px;
+}
+span {
+    color: rgb(188, 195, 201);
+}
+.logo {
+    width: 40px;
+    height: 40px;
+    opacity: 0.6;
+}
+.hTags:hover {
+    color: rgb(233, 242, 249);
+    cursor: pointer;
+}
+#github-logo {
+    width: 25px;
+    height: 25px;
+}
+.hTags {
+    margin: 0 0px;
+}
+h1 {
+    position: relative;
+    top: 180px;
+    left: 200px;
+    font-size: 2.5em;
+    color: white;
+}
+#aboutMe {
+    color: rgb(233, 242, 249);
+    position: relative;
+    width: 520px;
+    top: 190px;
+    left: 200px;
+    line-height: 1.6;
+}
+#personalImage {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+    border-color: black;
+    left: 900px;
+    top: -100px;
+    object-fit: cover;
+    border-style:solid ;
+    border-width: 1em ;
+    border-color: #37353E;
+}
+#bio {
+    position: relative;
+
+}
