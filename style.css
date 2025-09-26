@@ -1,28 +1,37 @@
-@font-face{
+@font-face {
   font-family: "MyFont";
   src: url("fonts/SUSEMono-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 800;   /* variable weight range */
   font-style: normal;
   font-display: swap;
 }
-@font-face{
+@font-face {
   font-family: "MyFont";
   src: url("fonts/SUSEMono-Italic-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 800;
   font-style: italic;
   font-display: swap;
 }
-
+html {
+     scroll-behavior: smooth;
+}
 body {
-  background-color: #44444E;
+  background-color: #021526;
   font-family: 'MyFont', Helvetica, sans-serif;
   font-weight: bold;
   overflow-x: hidden;
+  margin: 0;
+  color: white;
+}
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
+/* ===== Header ===== */
 #header {
   display: flex;
-  background-color: #37353E;
+  background-color: #021526;
   border-radius: 0px 0px 10px 10px;
   position: fixed;
   top: 0;                         
@@ -35,67 +44,144 @@ body {
   height: 5%;
   z-index: 2;
 }
+
 #headerElements {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 80%;
 }
+
 #headerLogos {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   width: 20%;
   margin: 0 5px;
 }
-span {
-    color: rgb(188, 195, 201);
-}
-.logo {
-    width: 40px;
-    height: 40px;
-    opacity: 0.6;
-}
-.hTags:hover {
-    color: rgb(233, 242, 249);
-    cursor: pointer;
-}
-#github-logo {
-    width: 25px;
-    height: 25px;
-}
-.hTags {
-    margin: 0 0px;
-}
-h1 {
-    position: relative;
-    top: 180px;
-    left: 200px;
-    font-size: 2.5em;
-    color: white;
-}
-#aboutMe {
-    color: rgb(233, 242, 249);
-    position: relative;
-    width: 520px;
-    top: 190px;
-    left: 200px;
-    line-height: 1.6;
-}
-#personalImage {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    position: relative;
-    border-color: black;
-    left: 900px;
-    top: -100px;
-    object-fit: cover;
-    border-style:solid ;
-    border-width: 1em ;
-    border-color: #37353E;
-}
-#bio {
-    position: relative;
 
+span {
+  color: rgb(188, 195, 201);
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  opacity: 0.6;
+}
+
+#github-logo {
+  width: 25px;
+  height: 25px;
+}
+
+.hTags {
+  margin: 0 0px;
+}
+
+.hTags:hover {
+  color: rgb(233, 242, 249);
+  cursor: pointer;
+}
+
+/* ===== About Section ===== */
+#meContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 180px auto 0;   /* space below header, center horizontally */
+  padding: 0 40px;
+  gap: 40px;              /* spacing between bio and image */
+}
+
+#bio {
+  flex: 1;
+  color: rgb(233, 242, 249);
+}
+
+h1 {
+  font-size: 2.5em;
+  color: white;
+  margin-bottom: 20px;
+}
+
+#aboutMe {
+  line-height: 1.6;
+}
+
+#personalImage {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1em solid rgb(70, 70, 70);
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  #meContainer {
+    flex-direction: column;  /* stack vertically */
+    text-align: center;      /* center text */
+  }
+
+  #bio {
+    margin-bottom: 20px;     /* space before image */
+  }
+
+  #personalImage {
+    margin-top: 10px;
+  }
+}
+#projectsHeader {
+    position: relative;
+    text-align: center;
+    top: 220px;
+    font-weight: bold;
+    font-size: 250%;
+}
+#Projects {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    left: 350px;
+    top: 200px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.Project {
+  width: 300px;
+  height: 500px;
+  border: #043a7d solid 0.5em;
+  text-align: center;
+  border-radius: 10%;
+  transition: transform .3s ease, box-shadow .3s ease; /* animate these */
+  position: relative;   /* enables movement if you ever use top/bottom/left/right */
+}
+.Project img {
+    position: relative;
+    top: 50px;
+    width: 250px;
+    height: auto;
+    
+}
+.Project h3 {
+    text-align: left;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    padding: 5px 20px;
+}
+.Project p {
+    font-size: smaller;
+    padding: 20px;
+    text-align: left;
+}
+
+.Project:hover {
+  transform: translateY(-10px);                  /* lift up */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  cursor: pointer;   
 }
